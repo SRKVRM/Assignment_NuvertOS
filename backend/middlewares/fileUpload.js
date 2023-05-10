@@ -1,4 +1,5 @@
 const multer = require("multer");
+const fs = require("fs");
 
 const csvFilter = (req, file, cb) => {
   if (file.mimetype.includes("csv")) {
@@ -11,6 +12,9 @@ const csvFilter = (req, file, cb) => {
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const dir = "data";
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
     cb(null, dir);
   },
   filename: (req, file, cb) => {
