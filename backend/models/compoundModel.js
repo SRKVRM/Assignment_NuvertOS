@@ -1,7 +1,7 @@
 function CompoundModel(sequelize, Sequelize){
     const Compound = sequelize.define("compound", {
         id: {
-            type: Sequelize.STRING,
+            type: Sequelize.INTEGER,
             primaryKey: true
         },
         compoundName: {

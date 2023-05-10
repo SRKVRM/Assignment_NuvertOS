@@ -29,8 +29,8 @@ async function addCompound(req,res){
 //retrive all compounds with pagination
 async function getAllCompounds(req,res){
     try {
-        const page = req.query.page ? req.query.page : 1;
-        const size = req.query.size ? req.query.size : 10;
+        const page = req.query.page ? +req.query.page : 1;
+        const size = req.query.size ? +req.query.size : 10;
 
         const condition = {
             limit: size,
