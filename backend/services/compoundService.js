@@ -11,7 +11,7 @@ async function addCompound(compound){
 
 async function getAllCompounds(condition){
     try{
-        return await Compound.findAll(condition);
+        return await Compound.findAndCountAll(condition);
     } catch(err){
         throw err;
     }
