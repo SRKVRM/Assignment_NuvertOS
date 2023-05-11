@@ -1,0 +1,43 @@
+<div class="card-list">
+  <div class="card" *ngFor="let compound of compounds">
+    <mat-card [routerLink]="['/compound', compound.id]" style="height: 30vh">
+      <mat-card-header>
+        <mat-card-title>{{ compound.compoundName }}</mat-card-title>
+      </mat-card-header>
+      <img
+        mat-card-image
+        [src]="compound.imageSource"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-actions style="display: flex; justify-content: space-between">
+        <button
+          mat-icon-button
+          color="primary"
+          #tooltip="matTooltip"
+          matTooltip="Edit Compound"
+          (click)="openUpdateDialog($event, compound)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          #tooltip="matTooltip"
+          matTooltip="Delete Compound"
+          (click)="openDeleteDialog($event, compound)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<mat-paginator
+  [length]="totalRecords"
+  [pageIndex]="pageIndex"
+  [pageSize]="size"
+  [pageSizeOptions]="pageSizeOptions"
+  aria-label="Select page"
+  (page)="handlePageEvent($event)"
+>
+</mat-paginator>

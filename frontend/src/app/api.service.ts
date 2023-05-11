@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+// import { Observable } from 'rxjs/Observable';
+// import { Subject } from 'rxjs/Subject';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+  backendUrl = 'http://localhost:8080/api/compound';
+  // private source = new Subject<number[]>();
+  // data$ = this.source.asObservable();
+
+
+  constructor(private http: HttpClient) { }
+
+  fetchCompounds(page:number, size:number){
+    return this.http.get<any>(`${this.backendUrl}?page=${page}&size=${size}`);
+  }
+
+  fetchCompoundById(id:any){
+    return this.http.get<any>(`${this.backendUrl}/${id}`);
+  }
+
+  updateCompound(id:any, updatedData:any){
+    return this.http.patch<any>(`${this.backendUrl}/${id}`,updatedData);
+  }
+
+  deleteCompound(id:any){
+    return this.http.delete<any>(`${this.backendUrl}/${id}`);
+  }
+
+  uploadFile(file:any){
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.http.post<any>(`${this.backendUrl}/upload`,formData);
+  }
+}

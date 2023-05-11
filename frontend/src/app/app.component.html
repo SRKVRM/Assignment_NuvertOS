@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    routerLink=""
+  >
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>Assignment_NuvertOS</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    color="basic"
+    #tooltip="matTooltip"
+    matTooltip="Upload File"
+    (click)="openUploadDialog($event)"
+  >
+    <mat-icon>cloud_upload</mat-icon>
+  </button>
+  <button mat-icon-button #tooltip="matTooltip" matTooltip="Sarthak Verma">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+<!-- <app-compound></app-compound> -->
+<router-outlet></router-outlet>
+
+<!-- <app-dashboard></app-dashboard> -->

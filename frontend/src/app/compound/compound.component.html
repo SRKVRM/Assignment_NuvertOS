@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{
+        compound && compound.compoundName ? compound.compoundName : ""
+      }}</mat-card-title>
+      <img
+        mat-card-xl-image
+        [src]="compound && compound.imageSource ? compound.imageSource : ''"
+      />
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{
+      compound && compound.compoundDescription
+        ? compound.compoundDescription
+        : ""
+    }}
+  </mat-card-content>
+</mat-card>
