@@ -22,4 +22,15 @@
     display: flex;
     align-items: flex-start;
   }
+
+  .cm-content {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+}
   

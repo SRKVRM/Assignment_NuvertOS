@@ -43,6 +43,7 @@ export class DashboardComponent implements OnInit {
 
   openUpdateDialog(e:any, compound:any) {
     this.dialog.open(UpdateComponent, {
+      width: '750px',
       data: compound
     }).afterClosed().subscribe((res:any)=>{
       if(res){
@@ -55,7 +56,8 @@ export class DashboardComponent implements OnInit {
 
   openDeleteDialog(e:any, compound:any) {
     this.dialog.open(DeleteComponent, {
-      data: compound
+      data: compound,
+      width: '300px'
     }).afterClosed().subscribe((res:any)=>{
       if(res){
         this.openSnackBar("Deleted Succesfully!");

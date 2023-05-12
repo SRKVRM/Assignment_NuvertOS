@@ -29,7 +29,10 @@ export class CreateComponent {
         //snackbar
         console.log(res)
         this.dialogRef.close(true);
-      })
+      }),(err: any) => {
+        console.log(err);
+        this.dialogRef.close(false);
+      }
     }
   }
 }

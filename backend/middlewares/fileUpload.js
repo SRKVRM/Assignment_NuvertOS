@@ -23,5 +23,5 @@ const storage = multer.diskStorage({
   },
 });
 
-const fileUpload = multer({ storage: storage, fileFilter: csvFilter });
-module.exports = fileUpload;
+const fileHandler = multer({ storage: storage, fileFilter: csvFilter });
+module.exports = fileHandler;

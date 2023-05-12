@@ -2,6 +2,16 @@
   <div class="center">
     <h1>
       {{ compound && compound.compoundName ? compound.compoundName : "" }}
+      <a
+        *ngIf="compound && compound.imageAttribution"
+        target="_blank"
+        [href]="
+          compound && compound.imageAttribution ? compound.imageAttribution : ''
+        "
+        #tooltip="matTooltip"
+        matTooltip="Image Attribution"
+        ><mat-icon>link</mat-icon></a
+      >
     </h1>
   </div>
   <div class="center">
