@@ -22,4 +22,6 @@ router
 // Bulk creation of Compounds
 .post("/upload",fileHandler.single('file'), controller.addBulkCompounds)
 
+.post("/bulk-create",controller.bulkCreate)
+
 module.exports = router;

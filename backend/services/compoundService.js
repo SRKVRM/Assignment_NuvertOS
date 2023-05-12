@@ -43,7 +43,7 @@ async function deleteCompound(condition){
 
 async function bulkInsertCompounds(compounds){
     try{
-        return await Compound.bulkCreate(compounds);
+        return await Compound.bulkCreate(compounds, { updateOnDuplicate: ["id", "compoundName", "compoundDescription"] });
     } catch(err){
         throw err;
     }

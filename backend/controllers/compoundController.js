@@ -135,4 +135,20 @@ async function addBulkCompounds(req,res){
     }
 }
 
-module.exports={addCompound, getAllCompounds, getCompoundById, updateCompound, deleteCompound, addBulkCompounds};
+async function bulkCreate(req, res){
+    try{
+        let compounds = [...req.body];
+        if(compounds.length>0){
+            await service.bulkInsertCompounds(compounds);
+            res.send({message:'Data created successfully'});
+
+        } else{
+            res.send({message:'No data to be inserted'});
+        }
+    } catch(err){
+        console.error(err);
+        res.status(500).send({message: error.message || `Error while inserting bulk records`})
+    }
+}
+
+module.exports={addCompound, getAllCompounds, getCompoundById, updateCompound, deleteCompound, addBulkCompounds, bulkCreate};
