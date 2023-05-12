@@ -2,11 +2,6 @@ mat-grid-tile {
     background: lightblue;
   }
 
-  .example-card {
-    max-width: 200px;
-  }
-  
-
   .card-list {
     display: flex;
     flex-wrap: wrap;
@@ -17,4 +12,13 @@ mat-grid-tile {
     margin-bottom: 20px;
     width: calc(20% - 10px);
     box-sizing: border-box;
+  }
+
+  mat-card{
+    height: 38vh; margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  img{
+    height: 27vh;
   }

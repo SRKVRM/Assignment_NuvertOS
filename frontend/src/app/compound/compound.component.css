@@ -2,3 +2,26 @@
   max-width: 400px;
   margin-bottom: 8px;
 }
+
+/* .detail{
+  top: 20%;
+  position: absolute;
+} */
+
+.detail{
+  padding-top: 7%;
+  display: grid;
+}
+
+.center{
+  text-align: center;
+}
+
+.description{
+  margin: 0 20%;
+}
+
+img{
+  height: 30vh;
+  width: 30vh;
+}

@@ -1,14 +1,10 @@
 <div class="card-list">
   <div class="card" *ngFor="let compound of compounds">
-    <mat-card [routerLink]="['/compound', compound.id]" style="height: 30vh">
+    <mat-card [routerLink]="['/compound', compound.id]">
       <mat-card-header>
         <mat-card-title>{{ compound.compoundName }}</mat-card-title>
       </mat-card-header>
-      <img
-        mat-card-image
-        [src]="compound.imageSource"
-        alt="Photo of a Shiba Inu"
-      />
+      <img mat-card-image [src]="compound.imageSource" alt="Compound Image" />
       <mat-card-actions style="display: flex; justify-content: space-between">
         <button
           mat-icon-button
